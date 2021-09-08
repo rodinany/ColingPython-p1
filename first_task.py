@@ -43,5 +43,5 @@ for x in words:
 print(dictionary_df)
 f.close()
 
-dictionary_df.to_csv('Частотный словарь.csv', encoding='utf-8-sig', sep=',', header=False, index=False)
+dictionary_df.to_csv('dictionary.csv', encoding='utf-8-sig', sep=',', header=False, index=False)
 print('DataFrame is written successfully to Excel File.')
