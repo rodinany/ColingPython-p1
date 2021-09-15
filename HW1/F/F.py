@@ -1,3 +1,10 @@
 def solution(n):
-    ### YOUR CODE ###
-    return
+    powers = []
+    k = 1    
+    while True:
+        powers.append(k)
+        k += k
+        if k > n:
+            break
+    return powers
+
