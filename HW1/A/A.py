@@ -1,3 +1,3 @@
 def solution(a):
-    ### YOUR SOLUTION ###
+    a -= 1
     return a
