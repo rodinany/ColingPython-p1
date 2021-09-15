@@ -1,3 +1,9 @@
 def solution(a, b):
-    ### YOUR CODE ###
-    return
+    c = []
+    for x in b:
+        if x not in a:
+            c.append(x)
+    c = a + c
+    c.sort()
+    return c
+
