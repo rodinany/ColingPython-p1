@@ -15,5 +15,5 @@ a.items.append(0)
 print(a[1])
 
 b = OneIndexedList([1,2,3,4,5,6])
-b[4] = 100
-print(b[4])
+b[5] = 100
+print(b[5])
