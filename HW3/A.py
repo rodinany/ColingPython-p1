@@ -8,7 +8,6 @@ class OneIndexedList:
 
     def __setitem__(self, idx, value):
         self.items[idx-1] = value
-        return value
 
 a = OneIndexedList([])
 a.items.append(0)
