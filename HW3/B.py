@@ -8,7 +8,15 @@ class FileReader:
 
     def __add__(self, other):
         with open('new_file.txt', 'w') as file:
-            file.write(self.read() + '\n' + other.read())
+            content = ''
+            with open(self.path, 'r') as first_file:
+                for line in first_file:
+                    content += line
+            content += '\n'
+            with open(other.path, 'r') as second_file:
+                for line in second_file:
+                    content += line
+            file.write(content)
         return FileReader('new_file.txt')
 
     def __str__(self):
@@ -29,12 +37,12 @@ class FileReader:
              file.write(string)
 
     def count(self):
-        n = 0
+        line_count = 0
+        word_count = 0
         with open(self.path, 'r') as file:
-            content = ''
             for line in file:
-                n += 1
-                content += line
-        self.line_count = n
-        self.word_count = len(nltk.word_tokenize(content))
+                line_count += 1
+                word_count += len(nltk.word_tokenize(line))
+        self.line_count = line_count
+        self.word_count = word_count
         return f'the amount of lines = {self.line_count}, \nthe amount of words = {self.word_count}'
