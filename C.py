@@ -3,9 +3,8 @@ from itertools import product
 import random
 
 def generator(arr1, arr2):
-    random.shuffle(arr1)
-    random.shuffle(arr2)
-    for i in product(arr1, arr2, repeat=1):
+    while True:
+        i = random.choice(tuple(product(arr1, arr2, repeat=1)))
         n = morph.parse(i[0])[0]
         k = morph.parse(i[1])[0]
         if n.tag.gender == k.tag.gender and n.tag.case == k.tag.case == 'nomn':
